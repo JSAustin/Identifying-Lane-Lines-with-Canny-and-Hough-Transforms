@@ -9,8 +9,7 @@ My pipeline consisted of 6 steps:
 2) Apply Gaussian blurring using a kernel size of 5.
 3) Detect edges using a canny detection algorithm with OpenCV (low threshold: 70, high threshold: 190)
 4) Apply region selection mask to exclude edges detected outside of the region of interest (lane lines and road in front of car).
-5) Detect lines from edge points using Hough Transform.
-  a) draw_lines() was modified.  In the new algorithm, lines are divided into either left or right lane lines by whether the line's slope is positive or negative.  Lines are excluded if the magnitude of the slope is either too small (< 0.4) or too large (> 1.2).  The average slope and intercept is then taken separately for the left and right lines and used to plot new lines that originate at the bottom of the image and terminate at the highest acceptable edge detected in that frame.
+5) Detect lines from edge points using Hough Transform.  draw_lines() was modified.  In the new algorithm, lines are divided into either left or right lane lines by whether the line's slope is positive or negative.  Lines are excluded if the magnitude of the slope is either too small (< 0.4) or too large (> 1.2).  The average slope and intercept is then taken separately for the left and right lines and used to plot new lines that originate at the bottom of the image and terminate at the highest acceptable edge detected in that frame.
 6) Overlay lines onto original color image.
 
 ### 2. Identify potential shortcomings with your current pipeline
